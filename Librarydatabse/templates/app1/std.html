@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/std.css" %}">
+</head>
+<body>
+<h2>STUDENT INFORMATION</h2>
+{% if std_list %}
+<table>
+    <thead>
+    <th>Sno</th>
+    <th>Sname</th>
+    <th>Sbranch</th>
+    <th>Smob</th>
+    <th>Bookname</th>
+    <th>Bookno</th>
+    </thead>
+{% for std in std_list %}
+<tr>
+    <td>{{std.sno}}</td>
+    <td>{{std.sname}}</td>
+    <td>{{std.sbranch}}</td>
+    <td>{{std.smob}}</td>
+    <td>{{std.bookname}}</td>
+    <td>{{std.bookno}}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+</body>
+</html>
